@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+@import "tailwindcss/preflight";
+
+@layer utilities {
+  .bg-body {
+    background-color: #161616;
+  }
+
+  .text-secondary {
+    color: #adea2d;
+  }
+
+  .font-roboto {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
