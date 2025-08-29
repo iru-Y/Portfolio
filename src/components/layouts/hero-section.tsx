@@ -20,7 +20,7 @@ export default function HeroSection() {
             end-to-end, especializado em APIs escaláveis ,
             aplicativos móveis cross-platform  e frontend 
           </p>
-          <ButtonComponent text="Download cv"/>
+          <div className="flex justify-center"><ButtonComponent text="Download cv"/></div>
         </div>
       </section>
     </>
