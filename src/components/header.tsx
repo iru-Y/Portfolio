@@ -1,11 +1,10 @@
 export default function Header() {
   return (
     <header>
-      <div className="pt-32 pr-48 pb-24 pl-48 flex justify-between items-center">
+      <div className="pt-10  pb-24 px-48 flex justify-between items-center font-roboto">
         <a href="/" className="font-bold text-xl">
           Yuri Matthewus
         </a>
-
         <nav>
           <ul className="flex gap-8">
             <li><a href="#sobre">SOBRE</a></li>
@@ -19,6 +18,8 @@ export default function Header() {
       <section className="flex">
           <img src="img/me1.png" alt="" />
       </section>
+
+    
 
     </header>
   );
