@@ -4,10 +4,11 @@
 
 @import "tailwindcss";
 
-@theme{
-   --font-roboto: "Roboto", sans-serif;
-   --font-montserrat: "Montserrat", sans-serif;
-   --font-playfair: "Playfair Display", sans-serif;
+@theme {
+  --font-roboto: "Roboto", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-playfair: "Playfair Display", sans-serif;
+  --color-secondary: #adea2d;
 }
 
 @utility container {
@@ -16,11 +17,15 @@
   @media (width>=40rem) {
     padding: 0 1rem;
   }
-
- 
 }
 
- body {
+@layer components {
+  .text-secondary {
+    color: var(--color-secondary);
+    font-family: var(--font-playfair)
+  }
+}
+body {
   font-family: var(--font-montserrat);
   color: white;
   background-color: #161616;
