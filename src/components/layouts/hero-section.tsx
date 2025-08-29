@@ -1,3 +1,5 @@
+import ButtonComponent from "../shared/button";
+
 export default function HeroSection() {
   return (
     <>
@@ -18,6 +20,7 @@ export default function HeroSection() {
             end-to-end, especializado em APIs escaláveis ,
             aplicativos móveis cross-platform  e frontend 
           </p>
+          <ButtonComponent text="Download cv"/>
         </div>
       </section>
     </>

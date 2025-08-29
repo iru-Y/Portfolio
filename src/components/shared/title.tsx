@@ -1,4 +1,4 @@
-export default function Title({ title }: { title: string }){
+export default function TitleComponent({ title }: { title: string }){
     return <>
     <h1>
         {title}

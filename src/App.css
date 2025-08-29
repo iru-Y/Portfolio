@@ -9,6 +9,7 @@
   --font-montserrat: "Montserrat", sans-serif;
   --font-playfair: "Playfair Display", sans-serif;
   --color-secondary: #adea2d;
+  
 }
 
 @utility container {
@@ -20,9 +21,15 @@
 }
 
 @layer components {
+  .bg-button{
+    background-color: var(--color-secondary);
+  }
   .text-secondary {
     color: var(--color-secondary);
     font-family: var(--font-playfair)
+  }
+  .color-secondary{
+    color: var(--color-secondary);
   }
 }
 body {

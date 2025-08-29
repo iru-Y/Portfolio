@@ -1,6 +1,14 @@
-export default function Button(){
+export default function ButtonComponent(
+    {
+        text
+    }: {text:string}
+){
     return<>
-        <button>
+        <button className="text-black font-medium w-30 h-10 bg-secondary rounded-sm"
+        type="submit"
+        onClick={()=>{
+            console.log("click")
+        }} > {text}
             
         </button>
     </>
