@@ -3,7 +3,7 @@ import ButtonComponent from "../shared/button";
 export default function HeroSection() {
   return (
     <>
-      <section className="px-48 flex">
+      <section className="px-20 flex">
         <img src="/assets/img/me1.png" alt="Eu" />
 
         <div className="flex flex-col gap-8 pl-10 pt-10">
