@@ -4,7 +4,7 @@ export default function HeroSection() {
       <section className="px-48 flex">
         <img src="/assets/img/me1.png" alt="Eu" />
 
-        <div className="flex flex-col gap-8 pl-10">
+        <div className="flex flex-col gap-8 pl-10 pt-10">
           <span className="text-3xl">
             Olá, eu sou o <b className="text-secondary text-5xl">Yuri Matthewus</b>
           </span>
