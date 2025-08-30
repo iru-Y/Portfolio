@@ -9,7 +9,7 @@
   --font-montserrat: "Montserrat", sans-serif;
   --font-playfair: "Playfair Display", sans-serif;
   --color-secondary: #adea2d;
-  
+  --secondary-body-color: #222222;
 }
 
 @utility container {
@@ -21,19 +21,26 @@
 }
 
 @layer components {
-  .bg-button{
+  .bg-secondary-color {
+  }
+  .bg-button {
     background-color: var(--color-secondary);
   }
   .text-secondary {
     color: var(--color-secondary);
-    font-family: var(--font-playfair)
+    font-family: var(--font-playfair);
   }
-  .color-secondary{
+  .color-secondary {
     color: var(--color-secondary);
+  }
+  .color-bg-secondary {
+    color: var(--secondary-body-color: #222222;);
   }
 }
 body {
   font-family: var(--font-montserrat);
   color: white;
   background-color: #161616;
+  padding: 0 40px;
+  overflow-x: hidden;
 }
