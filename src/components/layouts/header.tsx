@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <header>
-      <div className="pt-10  pb-24 px-48 flex justify-between items-center font-roboto">
+      <div className="pt-10  pb-27 px-48 flex justify-between items-center font-roboto">
         <a href="/" className="font-bold text-xl">
           Yuri Matthewus
         </a>

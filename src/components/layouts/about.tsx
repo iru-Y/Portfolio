@@ -4,7 +4,7 @@ import TitleComponent from "../shared/title";
 export default function About() {
   return (
     <>
-      <section className="px-20 py-20">
+      <section className="px-20 py-20 flex">
         <div className="w-150">
           <TitleComponent
             title="SOBRE MIM"
@@ -14,8 +14,34 @@ export default function About() {
           />
         </div>
 
-      <Status width="300px" height="200px" title="12k" subTitle="todos projeos"/>
-
+        <div>
+          <Status
+            width="250px"
+            height="100px"
+            title="12k"
+            subTitle="todos projeos"
+          />
+          <Status
+            width="250px"
+            height="100px"
+            title="12k"
+            subTitle="todos projeos"
+          />
+        </div>
+        <div>
+          <Status
+            width="250px"
+            height="100px"
+            title="12k"
+            subTitle="todos projeos"
+          />
+          <Status
+            width="250px"
+            height="100px"
+            title="12k"
+            subTitle="todos projeos"
+          />
+        </div>
       </section>
     </>
   );

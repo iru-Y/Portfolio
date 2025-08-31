@@ -10,6 +10,7 @@
   --font-playfair: "Playfair Display", sans-serif;
   --color-secondary: #adea2d;
   --secondary-body-color: #222222;
+  --bg-container: #242424;
 }
 
 @utility container {
@@ -21,7 +22,8 @@
 }
 
 @layer components {
-  .bg-secondary-color {
+  .bg-container {
+    background-color: var(--bg-container);
   }
   .bg-button {
     background-color: var(--color-secondary);
