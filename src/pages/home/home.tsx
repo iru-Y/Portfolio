@@ -1,13 +1,9 @@
-import About from "../../components/layouts/about";
-import Header from "../../components/layouts/header";
-import HeroSection from "../../components/layouts/hero-section";
+import Header from "../../components/ui/Header";
 
 export default function Home() {
   return (
     <>
         <Header />
-        <HeroSection/>
-        <About/>
     </>
   );
 }
