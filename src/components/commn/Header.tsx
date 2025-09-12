@@ -30,8 +30,7 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 lg:px-8 relative">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <div className="flex items-center flex-shrink-0">
+          <div className="flex items-center">
             <div className="w-10 h-10 bg-neon rounded-lg flex items-center justify-center">
               <span className="text-background font-bold text-xl">Y</span>
             </div>
@@ -51,6 +50,11 @@ export default function Header() {
               </a>
             ))}
           </nav>
+
+            <div className="hidden md:flex ">
+              
+            </div>
+              
         </div>
       </div>
     </header>
