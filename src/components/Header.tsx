@@ -3,6 +3,7 @@ import Button from "./common/button";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,6 +57,12 @@ export default function Header() {
             <Button className="bg-neon text-background hover:bg-neon/90 font-medium px-6 py-2">
               CONTATO
             </Button>
+
+          <button className="md:hidden text-foreground p-2 hover:text-neon transition-colors"
+          onClick={()=> setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={24}/> : <Menu size={24}/> }
+          </button>
           </div>
         </div>
       </div>
