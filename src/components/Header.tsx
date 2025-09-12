@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Button from "./common/button";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,10 +52,11 @@ export default function Header() {
             ))}
           </nav>
 
-            <div className="hidden md:flex ">
-              
-            </div>
-              
+          <div className="hidden md:flex ">
+            <Button className="bg-neon text-background hover:bg-neon/90 font-medium px-6 py-2">
+              CONTATO
+            </Button>
+          </div>
         </div>
       </div>
     </header>
