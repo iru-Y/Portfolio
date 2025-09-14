@@ -1,4 +1,4 @@
-import { Download, MessageCircle } from "lucide-react";
+import { ArrowRight, Download, MessageCircle } from "lucide-react";
 import Badge from "./common/badge";
 import Button from "./common/button";
 import { StatsGrid } from "./common/statsGrid";
@@ -9,7 +9,7 @@ export default function HeroSection() {
     { value: "5", label: "Clientes Satisfeitos" },
     { value: "5", label: "Projetos Concluídos" },
     { value: "4", label: "Anos de Experiência" },
-    { value: "3", label: "Linguagens de programação no currículo" },
+    { value: "3", label: "Linguagens de programação" },
   ];
 
   return (
@@ -68,8 +68,10 @@ export default function HeroSection() {
         </div>
       </div>
 
-        <StatsGrid items={stats} className="mx-4"></StatsGrid>
-
+        <StatsGrid items={stats} className="mx-4 pt-12 md:pt-0"></StatsGrid>
+         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <ArrowRight className="w-16 h-16 text-neon rotate-90" />
+      </div>
     </section>
   );
 }
