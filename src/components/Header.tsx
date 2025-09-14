@@ -56,7 +56,7 @@ export default function Header() {
 
           <div className="hidden md:flex ">
             <Button className="bg-neon text-background hover:bg-neon/90 font-medium px-6 py-2">
-              CONTATO
+              Contato
             </Button>
           </div>
           <button
