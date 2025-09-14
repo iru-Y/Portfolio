@@ -1,8 +1,17 @@
 import { Download, MessageCircle } from "lucide-react";
 import Badge from "./common/badge";
 import Button from "./common/button";
+import { StatsGrid } from "./common/statsGrid";
 
 export default function HeroSection() {
+
+    const stats = [
+    { value: "5", label: "Clientes Satisfeitos" },
+    { value: "5", label: "Projetos Concluídos" },
+    { value: "4", label: "Anos de Experiência" },
+    { value: "3", label: "Linguagens de programação no currículo" },
+  ];
+
   return (
     <section id="home" className="min-h-screen  overflow-hidden py-25">
       <div className="absolute inset-0 bg-gradient-to-br from-background via-darker-surface to-background"></div>
@@ -59,7 +68,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-        
+        <StatsGrid items={stats} className="mx-4"></StatsGrid>
 
     </section>
   );
