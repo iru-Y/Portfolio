@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Button from "./common/button";
+import { X, Menu } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,10 +17,10 @@ export default function Header() {
 
   const navItems = [
     { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
+    { name: "Sobre", href: "#about" },
+    { name: "Serviços", href: "#services" },
     { name: "Portfolio", href: "#portfolio" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contato", href: "#contact" },
   ];
 
   return (
@@ -57,13 +58,33 @@ export default function Header() {
             <Button className="bg-neon text-background hover:bg-neon/90 font-medium px-6 py-2">
               CONTATO
             </Button>
-
-          <button className="md:hidden text-foreground p-2 hover:text-neon transition-colors"
-          onClick={()=> setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24}/> : <Menu size={24}/> }
-          </button>
           </div>
+          <button
+            className="md:hidden text-foreground p-2 hover:text-neon transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
+          {isMobileMenuOpen && (
+            <div className="md:hidden absolute top-full left-4 right-4 bg-card/95 backdrop-blur-md border border-border rounded-lg shadow-xl mt-2">
+              <nav className="flex flex-col p-6 space-y-4">
+                {navItems.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-muted-foreground hover:text-neon transition-colors duration-300 py-3 text-center border-b border-border/50 last:border-b-0"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ))}
+                <Button className="bg-neon text-background hover:bg-neon/90 font-medium mt-4 w-full">
+                  Contato
+                </Button>
+              </nav>
+            </div>
+          )}
         </div>
       </div>
     </header>
