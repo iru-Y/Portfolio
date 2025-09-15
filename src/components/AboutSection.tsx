@@ -1,11 +1,22 @@
+import { FaJava, FaLinux, FaReact } from "react-icons/fa";
 import Badge from "./common/badge";
 import Button from "./common/button";
-
+import { FaFlutter } from "react-icons/fa6";
+import { Card } from "./common/card";
 export default function AboutSection() {
+
+   const programmingLanguage = [
+   { icon: <FaJava size={32} color="#007396" />, name: "Java", label: "3 projetos"},
+   { icon: <FaFlutter size={32} color="#007396"/> , name: "Flutter", label: "3 projetos"},
+   { icon: <FaLinux  size={32} color="#007396"/>, name: "Linux" , label: "no dia a dia"},
+   { icon: <FaReact size={32} color="#007396"/>, name: "React", label: "1 projeto"}]
+   
+
   return (
     <section id="about" className="">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
           <div>
             <Badge className="bg-neon/10 text-neon border-neon/20 mb-6 px-4 py-2">
               Sobre mim
@@ -27,6 +38,11 @@ export default function AboutSection() {
               Download CV
             </Button>
           </div>
+        </div>
+        <div className="grid grid-cols-2 gap-6">
+          {programmingLanguage.map((programmingLanguage, index)=>(
+              <Card></Card>
+          ))}
         </div>
       </div>
     </section>

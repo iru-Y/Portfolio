@@ -70,7 +70,7 @@ export default function HeroSection() {
 
         <StatsGrid items={stats} className="mx-4 pt-12 md:pt-0"></StatsGrid>
          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowRight className="w-16 h-16 text-neon rotate-90" />
+        <a href="#about"><ArrowRight className="w-16 h-16 text-neon rotate-90" /></a>
       </div>
     </section>
   );
