@@ -6,19 +6,19 @@ import { Card, CardContent } from "./common/card";
 export default function AboutSection() {
   const programmingLanguages = [
     {
-      icon: <FaJava size={32} color="#007396" />,
+      icon: <FaJava size={42} color="#78ffb7" />,
       name: "Java",
     },
     {
-      icon: <FaFlutter size={32} color="#007396" />,
+      icon: <FaFlutter size={42} color="#78ffb7" />,
       name: "Flutter",
     },
     {
-      icon: <FaLinux size={32} color="#007396" />,
+      icon: <FaLinux size={42} color="#78ffb7" />,
       name: "Linux",
     },
     {
-      icon: <FaReact size={32} color="#007396" />,
+      icon: <FaReact size={42} color="#78ffb7" />,
       name: "React",
     },
   ];
@@ -38,7 +38,7 @@ export default function AboutSection() {
             </h2>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
               Desenvolvedor fullstack com 3 anos de experiência em projetos
-              end-to-end, especializado em APIs escaláveis (Java/Spring bottom)
+              end-to-end, especializado em APIs escaláveis (Java/Spring boot)
               e aplicativos móveis cross-platform (Flutter). Combino arquitetura
               limpa (SOLID, Clean Architecture) e práticas DevOps (Docker,
               CI/CD) para entregar soluções que reduzem erros em 30% e suportam
@@ -50,22 +50,23 @@ export default function AboutSection() {
             </Button>
           </div>
           <div className="grid grid-cols-2 gap-6">
-          {programmingLanguages.map((programmingLanguage, index) => (
-            <Card
-              className="bg-card/50 backdrop-blur-sm border-border hover:border-neon/30 transition-all duration-300 group"
-              key={index}
-            >
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-neon/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-neon/20 transition-colors">
-                  {programmingLanguage.icon}
-                </div>
-                <div className="text-3xl font-bold text-neon mb-2">{programmingLanguage.name}</div>
-              </CardContent>
-            </Card>
-          ))}
+            {programmingLanguages.map((programmingLanguage, index) => (
+              <Card
+                className="bg-card/50 backdrop-blur-sm border-border hover:border-neon/30 transition-all duration-300 group"
+                key={index}
+              >
+                <CardContent className="p-6 text-center">
+                  <div className="w-16 h-16 bg-neon/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-neon/20 transition-colors">
+                    {programmingLanguage.icon}
+                  </div>
+                  <div className="text-3xl font-bold text-neon mb-2">
+                    {programmingLanguage.name}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
-        </div>
-        
       </div>
     </section>
   );
