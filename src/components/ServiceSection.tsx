@@ -15,7 +15,7 @@ export default function ServiceSection() {
       icon: <FaServer size={42} color="#78ffb7" />,
       title: "Desenvolvimento Backend",
       description:
-        "Crio APIs escaláveis e seguras com Java/Spring Boot e Python/Django, garantindo alta performance e integração confiável.",
+        "Crio APIs escaláveis e seguras com Java/Spring Boot e Node/Express, garantindo alta performance e integração confiável.",
     },
     {
       icon: <FaMobileAlt size={42} color="#78ffb7" />,
@@ -79,20 +79,21 @@ export default function ServiceSection() {
                 </div>
 
                 <h3 className="text-xl font-semibold mb-4 group-hover:text-neon transition-colors">
-                    {services.title}
+                  {services.title}
                 </h3>
 
                 <p className="text-muted-foreground leading-relaxed">
-                    {services.description}
+                  {services.description}
                 </p>
 
                 <div className="mt-6">
-                    <button className="text-neon hover:text-neon/80 font-medium group flex items-center cursor-pointer">
-                        Saiba mais
-                        <span className="ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
-                    </button>
+                  <button className="text-neon hover:text-neon/80 font-medium group flex items-center cursor-pointer">
+                    Saiba mais
+                    <span className="ml-2 transform group-hover:translate-x-1 transition-transform">
+                      →
+                    </span>
+                  </button>
                 </div>
-
               </CardContent>
             </Card>
           ))}
