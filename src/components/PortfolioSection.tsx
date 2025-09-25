@@ -1,6 +1,6 @@
 import { FaLink } from "react-icons/fa";
 import Badge from "./common/badge";
-import { Card } from "./common/card";
+import { Card, CardContent } from "./common/card";
 
 export default function PortfolioSection() {
 
@@ -32,6 +32,13 @@ export default function PortfolioSection() {
     description: "Desenvolvimento da API REST em Java/Spring Boot para plataforma de entregas, com cálculo de distância, precificação automática, geração de código de rastreio e monitoramento em tempo real.",
     image: "assets/img/zoe.png",
     tags: ["Spring Boot", "PostgreSQL", "Spring Security", "JUnit", "Hibernate"]
+  },
+  {
+    title: "EasyBarcode - Leitor de código de barras",
+    category: "Frontdnd",
+    description: "Desenvolvimento do leitor de código de barras feito em Angular, ele lê os códigos de barras e envia para o computador via api feita em Java para digitação automática ou salvar os códigos em um CSV",
+    image: "assets/img/barcode.png",
+    tags: ["Spring Boot", "PostgreSQL", "Spring Security", "Angular", "Javascript"]
   }
 ];
 
@@ -75,6 +82,35 @@ export default function PortfolioSection() {
                         </button>
                       </div>
                     </div>
+
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-between mb-3">
+                        <Badge variant="outline" className="border-neon/20 text-neon text-xs">
+                          {project.category}
+                        </Badge>
+                      </div>
+
+                      <h3 className="text-xl font-semibold mb-3 group-hover:text-neon transition-colors">
+                        {project.title}
+                      </h3>
+
+                      <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                        {project.description}
+                      </p>
+
+                         <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span 
+                        key={tagIndex}
+                        className="px-3 py-1 bg-neon/10 text-neon text-xs rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                    </CardContent>
+
                   </Card>
                 ))}
             </div>
