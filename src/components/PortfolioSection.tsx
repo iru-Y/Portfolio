@@ -50,9 +50,9 @@ export default function PortfolioSection() {
             Projetos que realizei
           </Badge>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Meus projetos{" "}
+            MEUS PROJETOS
             <span className="block text-neon">
-              e todos os clientes que já atendi
+              E TODOS OS CLIENTES QUE JÁ ATENDI
             </span>
           </h2>
 

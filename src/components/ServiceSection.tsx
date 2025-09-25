@@ -58,7 +58,7 @@ export default function ServiceSection() {
             O que eu faço de melhor
           </Badge>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Meus Melhores <span className="text-neon">serviços</span>
+            MEUS MELHORES <span className="text-neon">SERVIÇOS</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Ofereço soluções digitais em desenvolvimento de software, buscando
