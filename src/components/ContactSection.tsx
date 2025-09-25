@@ -1,6 +1,10 @@
 import { FaMailBulk, FaMap, FaPhone } from "react-icons/fa";
 import Badge from "./common/badge";
 import { Card, CardContent } from "./common/card";
+import { Input } from "./common/input";
+import Button from "./common/button";
+import { Send } from "lucide-react";
+import { Textarea } from "./common/textArea";
 
 export default function ContactSection() {
   const contactInfo = [
@@ -73,7 +77,7 @@ export default function ContactSection() {
                           className="text-foreground hover:text-neon transition-colors font-medium"
                         >
                           {info.value}
-                        </a>    
+                        </a>
                       </div>
                     </div>
                   </CardContent>
@@ -81,9 +85,79 @@ export default function ContactSection() {
               ))}
             </div>
           </div>
-          
-              
 
+          <div>
+            <Card className="bg-card/50 backdrop-blur-sm border-border">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-semibold mb-6">
+                  Me mande uma mensagem
+                </h3>
+
+               <form className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-sm font-medium text-foreground mb-2 block">
+                        Nome
+                      </label>
+                      <Input 
+                        placeholder="John"
+                        className="bg-dark-surface border-border focus:border-neon"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-foreground mb-2 block">
+                        Sobrenome
+                      </label>
+                      <Input 
+                        placeholder="Doe"
+                        className="bg-dark-surface border-border focus:border-neon"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label className="text-sm font-medium text-foreground mb-2 block">
+                      Email
+                    </label>
+                    <Input 
+                      type="email"
+                      placeholder="john@example.com"
+                      className="bg-dark-surface border-border focus:border-neon"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="text-sm font-medium text-foreground mb-2 block">
+                      Assunto
+                    </label>
+                    <Input 
+                      placeholder="Gostei do seu portfólio"
+                      className="bg-dark-surface border-border focus:border-neon"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="text-sm font-medium text-foreground mb-2 block">
+                      Messagem
+                    </label>
+                    <Textarea 
+                      rows={5}
+                      placeholder="Me fale mais sobre seus projetos..."
+                      className="bg-dark-surface border-border focus:border-neon resize-none"
+                    />
+                  </div>
+                  
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-neon text-background hover:bg-neon/90 font-medium py-3"
+                  >
+                    <Send className="w-4 h-4 mr-2" />
+                    Send Message
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </section>

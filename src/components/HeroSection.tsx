@@ -31,7 +31,7 @@ export default function HeroSection() {
 
             <p className="text-lg text-muted-foreground mb-8 max-w-lg">
               Tenho 3 anos de experiência com Java, apps mobile com Flutter e
-              frontend com Angular 15+.
+              frontend com React.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
