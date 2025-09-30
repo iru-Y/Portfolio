@@ -53,7 +53,7 @@ export default function HeroSection() {
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
               <div className="absolute inset-0 bg-neon/20 rounded-full blur-3xl scale-110"></div>
-              <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-neon/30">
+              <div className="relative w-70 h-70 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-neon/30">
                 <img
                   src="./assets/img/me1.png"
                   alt="Yuri Matthewus - Backend e fullstack developer"
