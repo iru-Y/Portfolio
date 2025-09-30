@@ -38,7 +38,7 @@ export default function Header() {
               <span className="text-background font-bold text-xl">Y</span>
             </div>
             <span className="ml-3 text-foreground font-semibold text-xl">
-              Yuri
+              Yuri Matthewus
             </span>
           </div>
           <nav className="hidden md:flex items-center space-x-8 flex-1 justify-center">

@@ -89,7 +89,7 @@ export default function Footer() {
                   "Desenvolvimento Backend",
                   "Desenvolvimento Mobile",
                   "Arquitetura de Software",
-                  "Consulting",
+                  "DevOps",
                 ].map((service) => (
                   <li key={service}>
                     <a

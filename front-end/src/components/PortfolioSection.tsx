@@ -76,11 +76,11 @@ export default function PortfolioSection() {
                       <img src={project.image} alt={project.title} 
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                       />
-                      <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+                      {/* <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
                         <button className="w-12 h-12 bg-neon rounded-full flex items-center justify-center text-background hover:bg-neon/90 transition-colors">
                          <FaLink></FaLink>
                         </button>
-                      </div>
+                      </div> */}
                     </div>
 
                     <CardContent className="p-6">
