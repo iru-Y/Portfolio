@@ -51,7 +51,7 @@ export default function ServiceSection() {
   ];
 
   return (
-    <section id="#services" className="py-20 bg-dark-surface">
+    <section id="services" className="py-20 bg-dark-surface">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <Badge className="bg-neon/10 text-neon border-neon/20 mb-6 px-4 py-2">
@@ -87,12 +87,18 @@ export default function ServiceSection() {
                 </p>
 
                 <div className="mt-6">
-                  <button className="text-neon hover:text-neon/80 font-medium group flex items-center cursor-pointer">
-                    Saiba mais
-                    <span className="ml-2 transform group-hover:translate-x-1 transition-transform">
-                      →
-                    </span>
-                  </button>
+                  <a
+                    href="https://github.com/iru-Y"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button className="text-neon hover:text-neon/80 font-medium group flex items-center cursor-pointer">
+                      Saiba mais
+                      <span className="ml-2 transform group-hover:translate-x-1 transition-transform">
+                        →
+                      </span>
+                    </button>
+                  </a>
                 </div>
               </CardContent>
             </Card>

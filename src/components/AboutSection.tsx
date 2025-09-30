@@ -1,4 +1,4 @@
-import { FaJava, FaLinux, FaReact } from "react-icons/fa";
+import { FaDocker, FaJava, FaReact } from "react-icons/fa";
 import Badge from "./common/badge";
 import Button from "./common/button";
 import { FaFlutter } from "react-icons/fa6";
@@ -14,8 +14,8 @@ export default function AboutSection() {
       name: "Flutter",
     },
     {
-      icon: <FaLinux size={42} color="#78ffb7" />,
-      name: "Linux",
+      icon: <FaDocker size={42} color="#78ffb7" />,
+      name: "Docker",
     },
     {
       icon: <FaReact size={42} color="#78ffb7" />,
@@ -46,7 +46,7 @@ export default function AboutSection() {
             </p>
 
             <Button className="bg-neon text-background hover:bg-neon/90 font-medium px-8 py-3 rounded-full">
-              Download CV
+              <a href="/public/assets/doc/Curriculo_Yuri_full.pdf" download>Download CV</a>
             </Button>
           </div>
           <div className="grid grid-cols-2 gap-6">

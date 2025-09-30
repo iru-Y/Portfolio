@@ -37,7 +37,7 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button className="bg-neon text-background hover:bg-neon/90 font-medium px-8 py-3 rounded-full">
                 <Download className="w-4 h-4 mr-2" />
-                Download CV
+               <a href="/public/assets/doc/Curriculo_Yuri_full.pdf" download>Download CV</a>
               </Button>
 
               <Button
@@ -45,7 +45,7 @@ export default function HeroSection() {
                 className="border-neon text-neon hover:bg-neon hover:text-background px-8 py-3 rounded-full"
               >
                 <MessageCircle className="w-4 h-4 mr-2" />
-                Vamos Conversar
+                 <a href="https://www.linkedin.com/in/yurisousadev/"  target="_blank" rel="noopener noreferrer">Vamos conversar</a>
               </Button>
             </div>
           </div>

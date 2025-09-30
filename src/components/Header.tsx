@@ -56,7 +56,13 @@ export default function Header() {
 
           <div className="hidden md:flex ">
             <Button className="bg-neon text-background hover:bg-neon/90 font-medium px-6 py-2">
-              Contato
+              <a
+                href="https://wa.me/5599991542276?text=Ol%C3%A1%20Yuri%2C%20vi%20seu%20portf%C3%B3lio!"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Contato
+              </a>
             </Button>
           </div>
           <button
