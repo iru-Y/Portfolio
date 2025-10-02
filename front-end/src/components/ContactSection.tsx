@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FaMailBulk, FaMap, FaPhone } from "react-icons/fa";
 import Badge from "./common/badge";
 import { Card, CardContent } from "./common/card";
@@ -5,25 +6,56 @@ import { Input } from "./common/input";
 import Button from "./common/button";
 import { Send } from "lucide-react";
 import { Textarea } from "./common/textArea";
+import { sendContactForm } from "../domain/api";
 
 export default function ContactSection() {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<string | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus(null);
+
+    try {
+      await sendContactForm(formData);
+      setStatus("Mensagem enviada com sucesso!");
+      setFormData({ name: "", phone: "", email: "", subject: "", message: "" }); // limpa o form
+    } catch (err) {
+      setStatus("Erro ao enviar mensagem, tente novamente.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const contactInfo = [
     {
-      icon: (
-        <FaMailBulk className="w-5 h-5 text-neon" size={42} color="#78ffb7" />
-      ),
+      icon: <FaMailBulk className="w-5 h-5 text-neon" />,
       label: "Email",
       value: "yuri_matteus@hotmail.com",
       href: "mailto:yuri_matteus@hotmail.com",
     },
     {
-      icon: <FaPhone className="w-5 h-5 text-neon" size={42} color="#78ffb7" />,
+      icon: <FaPhone className="w-5 h-5 text-neon" />,
       label: "Telefone",
       value: "+55 (99)99154-2276",
       href: "tel:+5599991542276",
     },
     {
-      icon: <FaMap className="w-5 h-5 text-neon" size={42} color="#78ffb7" />,
+      icon: <FaMap className="w-5 h-5 text-neon" />,
       label: "Localização",
       value: "Brasil",
       href: "#",
@@ -43,7 +75,7 @@ export default function ContactSection() {
           </h2>
 
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Aqui estão meus contantos, pode me chamar diretamente no Whatsapp ou
+            Aqui estão meus contatos, pode me chamar diretamente no Whatsapp ou
             no Linkedin que responderei o mais rápido possível. Vamos marcar uma
             call?
           </p>
@@ -59,10 +91,7 @@ export default function ContactSection() {
 
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
-                <Card
-                  key={index}
-                  className="bg-card/50 backdrop-blur-sm border-border hover:border-neon/30 transition-colors"
-                >
+                <Card key={index} className="bg-card/50 backdrop-blur-sm border-border">
                   <CardContent className="p-6">
                     <div className="flex items-center">
                       <div className="w-12 h-12 bg-neon/10 rounded-full flex items-center justify-center mr-4">
@@ -93,68 +122,78 @@ export default function ContactSection() {
                   Me mande uma mensagem
                 </h3>
 
-               <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-sm font-medium text-foreground mb-2 block">
-                        Nome
-                      </label>
-                      <Input 
-                        placeholder="John"
-                        className="bg-dark-surface border-border focus:border-neon"
+                      <label className="text-sm font-medium mb-2 block">Nome</label>
+                      <Input
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="John Doe"
+                        required
                       />
                     </div>
                     <div>
-                      <label className="text-sm font-medium text-foreground mb-2 block">
-                        Sobrenome
-                      </label>
-                      <Input 
-                        placeholder="Doe"
-                        className="bg-dark-surface border-border focus:border-neon"
+                      <label className="text-sm font-medium mb-2 block">Telefone</label>
+                      <Input
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="+55 99999-9999"
                       />
                     </div>
                   </div>
-                  
+
                   <div>
-                    <label className="text-sm font-medium text-foreground mb-2 block">
-                      Email
-                    </label>
-                    <Input 
+                    <label className="text-sm font-medium mb-2 block">Email</label>
+                    <Input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="john@example.com"
-                      className="bg-dark-surface border-border focus:border-neon"
+                      required
                     />
                   </div>
-                  
+
                   <div>
-                    <label className="text-sm font-medium text-foreground mb-2 block">
-                      Assunto
-                    </label>
-                    <Input 
+                    <label className="text-sm font-medium mb-2 block">Assunto</label>
+                    <Input
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
                       placeholder="Gostei do seu portfólio"
-                      className="bg-dark-surface border-border focus:border-neon"
+                      required
                     />
                   </div>
-                  
+
                   <div>
-                    <label className="text-sm font-medium text-foreground mb-2 block">
-                      Messagem
-                    </label>
-                    <Textarea 
+                    <label className="text-sm font-medium mb-2 block">Mensagem</label>
+                    <Textarea
+                      name="message"
                       rows={5}
+                      value={formData.message}
+                      onChange={handleChange}
                       placeholder="Me fale mais sobre seus projetos..."
-                      className="bg-dark-surface border-border focus:border-neon resize-none"
+                      required
                     />
                   </div>
-                  
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-neon text-background hover:bg-neon/90 font-medium py-3"
+
+                  <Button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full bg-neon text-background hover:bg-neon/90 py-3"
                   >
-                    <Send className="w-4 h-4 mr-2" />
-                    Send Message
+                    {loading ? "Enviando..." : <><Send className="w-4 h-4 mr-2" /> Enviar Mensagem</>}
                   </Button>
                 </form>
+
+                {status && (
+                  <p className="mt-4 text-center text-sm text-muted-foreground">
+                    {status}
+                  </p>
+                )}
               </CardContent>
             </Card>
           </div>

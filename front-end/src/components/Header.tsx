@@ -34,12 +34,16 @@ export default function Header() {
       <div className="container mx-auto px-4 lg:px-8 relative">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
-            <div className="w-10 h-10 bg-neon rounded-lg flex items-center justify-center">
-              <span className="text-background font-bold text-xl">Y</span>
-            </div>
-            <span className="ml-3 text-foreground font-semibold text-xl">
-              Yuri Matthewus
-            </span>
+            <a href="#home">
+              <div className="w-10 h-10 bg-neon rounded-lg flex items-center justify-center">
+                <span className="text-background font-bold text-xl">Y</span>
+              </div>
+            </a>
+            <a href="#home">
+              <span className="ml-3 text-foreground font-semibold text-xl">
+                Yuri Matthewus
+              </span>
+            </a>
           </div>
           <nav className="hidden md:flex items-center space-x-8 flex-1 justify-center">
             {navItems.map((item) => (
