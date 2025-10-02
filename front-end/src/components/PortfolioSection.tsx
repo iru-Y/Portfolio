@@ -1,4 +1,3 @@
-import { FaLink } from "react-icons/fa";
 import Badge from "./common/badge";
 import { Card, CardContent } from "./common/card";
 
